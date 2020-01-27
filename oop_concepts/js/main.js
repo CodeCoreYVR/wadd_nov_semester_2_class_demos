@@ -72,3 +72,44 @@ Object.setPrototypeOf(Car.prototype, Vehicle.prototype);
 const c1 = new Car("Range Rover", 2020);
 // Car { make: "Range Rover", model: 2020 }
 c1.drive(); // Driving Range Rover 2020
+
+// 3. Polymorphism
+// Base (master) class
+class Shape {
+  draw() {
+    return "Draw a Shape";
+  }
+}
+
+// Derived (sub) classes
+class Circle extends Shape {
+  constructor() {
+    super();
+  }
+  draw() {
+    return "Draw a Circle";
+  }
+}
+
+class Square extends Shape {
+  constructor() {
+    super();
+  }
+  draw() {
+    return "Draw a Square";
+  }
+}
+
+class Rectangle extends Shape {
+  constructor() {
+    super();
+  }
+}
+
+const circle = new Circle();
+const square = new Square();
+const rectangle = new Rectangle();
+
+circle.draw(); // Draw a Circle
+square.draw(); // Draw a Square
+rectangle.draw(); // Draw a Shape
